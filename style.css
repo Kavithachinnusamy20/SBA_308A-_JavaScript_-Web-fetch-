@@ -45,3 +45,7 @@
     button:hover {
         background-color: #2980b9;
     }
+
+    body{
+         background-color: rgb(188, 205, 200);
+    }

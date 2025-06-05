@@ -18,41 +18,46 @@ async function initialLoad() {
         console.log("data", data);
 
         console.log("data.events", data._embedded.events);
-         
+
         data._embedded.events.forEach((event) => {
             console.log(event);
-             // let data = json
-        let option = document.createElement("option")
-        option.setAttribute("value", event.id)
-        option.innerText = event.dates.start.localDate + " : " +event.name
-        select.appendChild(option)
-//create div for event
-// Select the container where divs will be added
-const cont = document.getElementById("container");
- // Create a new div element
-    let eventDiv = document.createElement("div");
-    eventDiv.addEventListener("click", (e) => {
-       
-    console.log("hello :", e.target.value)
-    // Set attributes and content
-    eventDiv.setAttribute("class", "event-container"); 
-    eventDiv.innerText = `${event.dates.start.localDate} : ${event.name}`;
+            // let data = json
+            let option = document.createElement("option")
+            option.setAttribute("value", event.id)
+            option.innerText = event.dates.start.localDate + " : " + event.name
+            select.appendChild(option)
 
-    // Add an event listener for clicks
-    // eventDiv.addEventListener("click", () => {
-    //     alert(`You clicked on: ${event.name}`);
-    // });
 
-    // Append the div to a parent element (make sure there's a container in your HTML)
-    cont.appendChild(eventDiv);
-alert(`You clicked on: ${event.name}`);
-});
- 
-    });
-              
+        });
+
     } catch (error) {
         console.log("final  catch block  ")
         console.error(error.message);
     }
 }
 initialLoad();
+
+
+
+//create div for event
+// Select the container where divs will be added
+const cont = document.getElementById("container");
+
+
+
+eventDiv.addEventListener("click", (e) => {
+
+    console.log("hello :", e.target.value)
+    // Set attributes and content  
+
+    // Create a new div element
+    let eventDiv = document.createElement("div");
+    // eventDiv.setAttribute("value", event.id);
+
+    // eventDiv.innerText = `${event.dates.start.localDate} : ${event.name}`;
+
+    // Append the div to a parent element (make sure there's a container in your HTML)
+    cont.appendChild(eventDiv);
+    console.log("eventdiv", eventDiv)
+    alert(`You clicked on: ${event.name}`);
+});

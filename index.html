@@ -11,7 +11,7 @@
 
     <!-- Our Styles -->
     <link href="style.css" rel="stylesheet" />
-    
+
 
     <title>Gallery</title>
 
@@ -21,14 +21,17 @@
 <body>
 
     <div class="gallery" id="gallery">
-        <h1>Favorite QUOTE</h1>
+        <h1> Discover Favorite Events</h1>
     </div>
-    
-     <div id="container"></div>
 
-    <div class="page" >
+    <div id="container"></div>
+
+    <div class="page">
+        <input type="text" id="searchBox" placeholder="Search events..." />
+        <button onclick="searchEvents()">Search</button>
+
         <label for="choices">Choose an option:</label>
-        <select id="choices" name="choices"  style="width:400px">
+        <select id="choices" name="choices" style="width:400px">
             <!-- <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option> -->
@@ -36,8 +39,19 @@
 
         <button id="click">Submit</button>
     </div>
+<!-- 
+    <div id="eventDetails">
+        <p id="eDetails">
+            Date:4/06/2025 <br>event name:New york Yankees vs Delaware
 
-    <script src="index.js"></script>
-</body>
+        </p>
 
-</html>
+        <p id="eImages">
+
+            <img src=".\img_sports.jpeg" /> -->
+        </p>
+
+    </div>
+
+    <script src="api.js"></script>
+    </bo
