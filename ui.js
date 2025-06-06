@@ -57,11 +57,22 @@ export function renderEvents(events) {
 
 }
 
+
 export function renderPagination(onPageChange) {
     const pagination = document.getElementById("pagination");
-    pagination.innerHTML = `
-    <button id="previousNavigation" >Previous</button>
-    <button id="nextNavigation">Next</button>
-`;
+    const section = document.getElementsByClassName("search-section")[0]; // Access first element
 
+    // Corrected template literal formatting
+    pagination.innerHTML = `
+        <button id="previousNavigation">Previous</button>
+        <button id="nextNavigation">Next</button>
+    `;
+
+    // Add event listeners for pagination buttons
+    document.getElementById("previousNavigation").addEventListener("click", () => onPageChange("previous"));
+    document.getElementById("nextNavigation").addEventListener("click", () => onPageChange("next"));
+
+    // Append pagination to the section correctly
+    section.appendChild(pagination); // Append the pagination element to the section
 }
+
