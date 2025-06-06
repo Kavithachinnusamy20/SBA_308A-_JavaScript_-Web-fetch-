@@ -6,22 +6,21 @@ export async function fetchEvents(userSelectedOption, page = 0) {
 
     const url = `${BASE_URL}?apikey=${API_KEY}&keyword=${userSelectedOption}&page=${page}`;
     console.log("Ticket Master URL :", url)
-//try & catch
+    //try & catch
     try {
+
         const response = await fetch(url);
         const data = await response.json();
-
-         console.log("data", data)
-
+        console.log("data", data)
         if (data._embedded != null) {
-            return data._embedded.events
+            return data._embedded.events;
         } else {
-            return  [];
+            return [];
         }
-       
-        
+
     } catch (error) {
         console.error("Error fetching events:", error);
         return [];
     }
-}
+
+};

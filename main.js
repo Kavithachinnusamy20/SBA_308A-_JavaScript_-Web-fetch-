@@ -4,11 +4,12 @@ import { renderEvents, renderPagination } from "./ui.js";
 let currentPage = 0;
 
 const searchBtn = document.getElementById("searchButton");
-const ticketOptions = document.getElementById("choices")
+const ticketOptions = document.getElementById("choices");
+
+
 //adding event listener for search
 searchBtn.addEventListener("click", async () => {
 
-    console.log("click")
     const query = ticketOptions.value;
 
     if (!query) {
