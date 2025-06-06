@@ -20,7 +20,6 @@ searchBtn.addEventListener("click", async () => {
     renderEvents(events);
     renderPagination(changePage);
 });
-//event listener ends
 
 
 function changePage(direction) {

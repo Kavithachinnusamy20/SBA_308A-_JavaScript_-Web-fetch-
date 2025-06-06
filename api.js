@@ -13,7 +13,12 @@ export async function fetchEvents(userSelectedOption, page = 0) {
 
          console.log("data", data)
 
-        return data._embedded?.events || [];
+        if (data._embedded != null) {
+            return data._embedded.events
+        } else {
+            return  [];
+        }
+       
         
     } catch (error) {
         console.error("Error fetching events:", error);
