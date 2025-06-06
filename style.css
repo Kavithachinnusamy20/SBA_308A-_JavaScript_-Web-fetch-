@@ -15,7 +15,55 @@
         text-align: center;
         margin-bottom: 20px;
     }
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #6f8574;
 
+}
+
+.search-section {
+margin: 20px;
+background-color: rgb(204, 227, 206);
+}
+ button {
+padding: 10px;
+font-size: 16px;
+background-color: rgb(34, 94, 45);
+}
+
+/* .event-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+} */
+
+/* .event-card {
+background: white;
+padding: 15px;
+margin: 10px;
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+} */
+const
+.pagination {
+
+margin-top: 20px;
+}
+#choices{
+    background-color: #f2efec;
+    width:50px;
+    height: 40px;
+    border-radius: 8px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center; /* Adjust alignment as needed */
+    padding-bottom: 20px; /* Adjust padding based on layout */
+    background-color: hsl(165, 2%, 40%); /* Optional styling */
+}
     .page {
         display: flex;
         flex-direction: column;
