@@ -12,6 +12,9 @@ export function renderEvents(events) {
 `).join("");
 }
 
+setTimeout(()=>renderEvents(events), 9000);
+
+
 export function renderPagination(onPageChange) {
     const pagination = document.getElementById("pagination");
     pagination.innerHTML = `

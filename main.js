@@ -5,7 +5,7 @@ let currentPage = 0;
 
 const searchBtn = document.getElementById("searchButton");
 const ticketOptions = document.getElementById("choices")
-
+//adding event listener for search
 searchBtn.addEventListener("click", async () => {
 
     console.log("click")
@@ -20,7 +20,7 @@ searchBtn.addEventListener("click", async () => {
     renderEvents(events);
     renderPagination(changePage);
 });
-
+//event listener ends
 
 
 function changePage(direction) {
