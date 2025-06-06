@@ -1,12 +1,12 @@
 const API_KEY = "kx3z9L9RvlGNGGShFvpxGnGahrnx8RTA";
 const BASE_URL = "https://app.ticketmaster.com/discovery/v2/events.json";
 
-
+//adding fetch events function
 export async function fetchEvents(userSelectedOption, page = 0) {
 
     const url = `${BASE_URL}?apikey=${API_KEY}&keyword=${userSelectedOption}&page=${page}`;
     console.log("Ticket Master URL :", url)
-
+//try & catch
     try {
         const response = await fetch(url);
         const data = await response.json();

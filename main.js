@@ -30,13 +30,3 @@ function changePage(direction) {
 
 
 
-const previousBtn = document.getElementById("previousNavigation");
-
-
-const nextBtn = document.getElementById("nextNavigation");
-
-
-previousBtn.addEventListener("click", async () => {
-    console.log("previousBtn");
-}
-);
