@@ -1,18 +1,4 @@
 
-// export function renderEvents2(events) {
-//     const eventContainer = document.getElementById("event-list");
-//     eventContainer.innerHTML = events.map(event => `
-//             <div class="event-card">
-//             <h3>${event.name}</h3>
-//             <p>${event.dates.start.localDate}</p>
-//             <p> <img src='${event.images[0].url}'  width="100", height="100" ></p>
-//             <button onclick="window.open('${event.url}', '_blank')"> Book Ticket </button>
-
-//         </div>
-// `).join("");
-// }
-
-
 
 export function renderEvents(events) {
     const eventContainer = document.getElementById("event-list");
@@ -28,7 +14,7 @@ export function renderEvents(events) {
         div.appendChild(eventName);
 
         // const eventDate = document.createElement("div")
-         const eventDate = document.createElement("p")
+        const eventDate = document.createElement("p")
         eventDate.innerText = event.dates.start.localDate;
         div.appendChild(eventDate);
 
@@ -40,7 +26,7 @@ export function renderEvents(events) {
 
         imgP.appendChild(eventImg);
         div.appendChild(imgP);
-
+        //adding timeout for book ticket
         const eventBookBtn = document.createElement("button")
         eventBookBtn.innerText = "Book Tickets"
         eventBookBtn.onclick = function () {
@@ -57,20 +43,28 @@ export function renderEvents(events) {
 }
 
 export function renderPagination(onPageChange) {
-    const pagination = document.getElementById("pagination");
+    const pagination = document.getElementById("pagination") || document.createElement("div");
+    pagination.id = "pagination"; // Ensure the element has the correct ID
+
+    const previousButton = document.createElement("button");
+    previousButton.id = "previousNavigation";
+    previousButton.textContent = "Previous";
+    previousButton.addEventListener("click", () => {
+        setTimeout(() => onPageChange("previous"), delay)
+    });
+
+    const nextButton = document.createElement("button");
+    nextButton.id = "nextNavigation";
+    nextButton.textContent = "Next";
+    nextButton.addEventListener("click", () => { setTimeout(() => onPageChange("next"), delay) });
+
+    pagination.innerHTML = ""; // Clear existing content to prevent duplicate buttons
+    pagination.appendChild(previousButton);
+    pagination.appendChild(nextButton);
+
     const section = document.getElementsByClassName("search-section")[0]; // Access first element
-
-    // Corrected template literal formatting
-    pagination.innerHTML = `
-        <button id="previousNavigation">Previous</button>
-        <button id="nextNavigation">Next</button>
-    `;
-
-    // Add event listeners for pagination buttons
-    document.getElementById("previousNavigation").addEventListener("click", () => onPageChange("previous"));
-    document.getElementById("nextNavigation").addEventListener("click", () => onPageChange("next"));
-
-    // Append pagination to the section correctly
-    section.appendChild(pagination); // Append the pagination element to the section
+    if (!document.getElementById("pagination")) {
+        section.appendChild(pagination);
+    }
 }
 

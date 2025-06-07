@@ -2,7 +2,6 @@
 
 Ticketmaster Event Explorer:
 
-
 1.I have access to all the features of the Ticketmaster API after creating an account.
 
 
