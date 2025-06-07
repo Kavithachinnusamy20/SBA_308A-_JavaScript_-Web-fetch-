@@ -16,7 +16,7 @@
 
 export function renderEvents(events) {
     const eventContainer = document.getElementById("event-list");
-    eventContainer.innerHTML = ""
+    eventContainer.innerHTML = "";
 
     events.forEach(event => {
 
@@ -27,15 +27,16 @@ export function renderEvents(events) {
         eventName.innerText = event.name;
         div.appendChild(eventName);
 
-        const eventDate = document.createElement("div")
+        // const eventDate = document.createElement("div")
+         const eventDate = document.createElement("p")
         eventDate.innerText = event.dates.start.localDate;
         div.appendChild(eventDate);
 
         const imgP = document.createElement("p")
         const eventImg = document.createElement("img");
         eventImg.src = event.images[0].url;
-        eventImg.width = "100";
-        eventImg.height = "100";
+        eventImg.width = 100;
+        eventImg.height = 100;
 
         imgP.appendChild(eventImg);
         div.appendChild(imgP);
@@ -46,19 +47,16 @@ export function renderEvents(events) {
             // Set Timeout - Open  Book Ticket URL after 3 sec
             setTimeout(() => {
                 window.open(event.url, '_blank');
-            }, 3000)
+            }, 1000)
         }
         div.appendChild(eventBookBtn);
 
         eventContainer.appendChild(div);
 
     });
-
-
 }
 
-
-export function renderPagination(changePage) {
+export function renderPagination(onPageChange) {
     const pagination = document.getElementById("pagination");
     const section = document.getElementsByClassName("search-section")[0]; // Access first element
 
@@ -69,8 +67,8 @@ export function renderPagination(changePage) {
     `;
 
     // Add event listeners for pagination buttons
-    document.getElementById("previousNavigation").addEventListener("click", () => changePage("previous"));
-    document.getElementById("nextNavigation").addEventListener("click", () => changePage("next"));
+    document.getElementById("previousNavigation").addEventListener("click", () => onPageChange("previous"));
+    document.getElementById("nextNavigation").addEventListener("click", () => onPageChange("next"));
 
     // Append pagination to the section correctly
     section.appendChild(pagination); // Append the pagination element to the section
