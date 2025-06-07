@@ -58,7 +58,7 @@ export function renderEvents(events) {
 }
 
 
-export function renderPagination(onPageChange) {
+export function renderPagination(changePage) {
     const pagination = document.getElementById("pagination");
     const section = document.getElementsByClassName("search-section")[0]; // Access first element
 
@@ -69,8 +69,8 @@ export function renderPagination(onPageChange) {
     `;
 
     // Add event listeners for pagination buttons
-    document.getElementById("previousNavigation").addEventListener("click", () => onPageChange("previous"));
-    document.getElementById("nextNavigation").addEventListener("click", () => onPageChange("next"));
+    document.getElementById("previousNavigation").addEventListener("click", () => changePage("previous"));
+    document.getElementById("nextNavigation").addEventListener("click", () => changePage("next"));
 
     // Append pagination to the section correctly
     section.appendChild(pagination); // Append the pagination element to the section
